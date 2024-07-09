@@ -7,6 +7,7 @@ const conDatabase = require('./database');
 const USER = require('./controllers/UserController')
 const EMPLOYEE = require('./controllers/EmployeeController')
 const IMAGE = require ('./controllers/ImageController')
+const LOGIN = require ('./controllers/LoginController')
 
 const app = express();
 app.use(cors());
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use('/',USER)
 app.use('/',EMPLOYEE)
 app.use('/',IMAGE)
+app.use('/',LOGIN)
 
 conDatabase()
     .then(data => {
