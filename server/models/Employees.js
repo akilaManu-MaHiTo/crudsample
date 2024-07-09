@@ -3,8 +3,11 @@ const mongoose = require ('mongoose')
 const EmployeeSchema = new mongoose.Schema({
 
     EmName: String,
-    EmEmail: String,
-    EmAge: Number
+    email: String,
+    EmAge: Number,
+    EmPassword: String,
+    EmType: String
+
 })
 
 const EmployeeModel = mongoose.model("employees",EmployeeSchema)

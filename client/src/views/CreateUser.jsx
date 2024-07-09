@@ -8,12 +8,13 @@ const CreateUsers = () => {
     const[name,setName] = useState();
     const[email,setEmail] = useState();
     const[age,setAge] = useState();
+    const[password,setPassword] = useState();
     const navigate = useNavigate();
 
     const Submit = (e) => {
 
         e.preventDefault();
-        axios.post("http://localhost:3001/createUser",{name,email,age})
+        axios.post("http://localhost:3001/createUser",{name,email,age,password})
         .then(result => {
 
             console.log(result)
@@ -47,6 +48,12 @@ const CreateUsers = () => {
                         <label className='block text-center mb-1'>Age</label>
                         <input type="Number" placeholder='Enter Age' className='w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-slate-500 focus:border-slate-500'
                         onChange={(e) => setAge(e.target.value)}/>
+                    </div>
+
+                    <div>
+                        <label className='block text-center mb-1'>Password</label>
+                        <input type="Number" placeholder='Enter Age' className='w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-slate-500 focus:border-slate-500'
+                        onChange={(e) => setPassword(e.target.value)}/>
                     </div>
 
                     <button type="submit">Submit</button>

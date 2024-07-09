@@ -6,14 +6,16 @@ import axios from 'axios'
 const createEmployees = () => {
 
     const[EmName,setName] = useState();
-    const[EmEmail,setEmail] = useState();
+    const[email,setEmail] = useState();
     const[EmAge,setAge] = useState();
+    const[EmPassword,setPassword] = useState();
+    const[EmType,setType] = useState();
     const navigate = useNavigate();
 
     const Submit = (e) => {
 
         e.preventDefault();
-        axios.post("http://localhost:3001/createEmployee",{EmName,EmEmail,EmAge})
+        axios.post("http://localhost:3001/createEmployee",{EmName,email,EmAge,EmPassword,EmType})
         .then(result => {
 
             console.log(result)
@@ -48,6 +50,28 @@ const createEmployees = () => {
                         <input type="Number" placeholder='Enter Age' className='w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-slate-500 focus:border-slate-500'
                         onChange={(e) => setAge(e.target.value)}/>
                     </div>
+
+                    <div>
+                        <label className='block text-center mb-1'>Password</label>
+                        <input type="Number" placeholder='Enter Age' className='w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-slate-500 focus:border-slate-500'
+                        onChange={(e) => setPassword(e.target.value)}/>
+                    </div>
+
+                    <div>
+
+                    <label className='block text-center mb-1'>Employee Role</label>
+                    <select 
+                        className='w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-slate-500 focus:border-slate-500'
+                        onChange={(e) => setType(e.target.value)}
+                    >
+                        <option value="">Select Role</option>
+                        <option value="Manager">Manager</option>
+                        <option value="Cashier">Cashier</option>
+                        <option value="Viator">Viator</option>
+                        <option value="Cheff">Cheff</option>                      
+                    </select>
+                </div>
+
 
                     <button type="submit">Submit</button>
 

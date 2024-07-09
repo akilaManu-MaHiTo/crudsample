@@ -7,6 +7,9 @@ import UpdateUsers from './views/UpdateUser';
 import CreateEmployee from './views/Employees';
 import AddImage from './views/AddImage';
 import ShowImage from './views/ShowImages';
+import LoginUser from './views/login'
+import UserHome from './views/UserHome'
+import AdminPage from './views/AdminPage'
 
 function App() {
   return (
@@ -18,6 +21,9 @@ function App() {
         <Route path='/createEmployee' element={<CreateEmployee />}></Route>
         <Route path='/addImage' element={<AddImage />}></Route>
         <Route path='/showImages' element={<ShowImage />}></Route>
+        <Route path='/login' element={<LoginUser />}></Route>
+        <Route path='/UserHome' element={<UserHome />}></Route>
+        <Route path='/AdminPage' element={<AdminPage />}></Route>
       </Routes>
     </BrowserRouter>
   );
